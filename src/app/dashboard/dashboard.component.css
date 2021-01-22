@@ -1,0 +1,30 @@
+.flex-container-main{
+    display: flex;
+}
+
+.flex-container {
+    display: flex; /* or inline-flex */
+    /* flex-direction: row;  row-reverse | column | column-reverse; */
+    /* flex-wrap: wrap; nowrap | wrap | wrap-reverse;
+    flex-flow: column wrap;*/
+}
+
+.flex-item {
+    flex: 1;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+    .flex-container{
+      display: block;
+    }
+}
+
+/*
+.flex-item:first-child {
+    width: 10%;  default is 0 
+}
+
+.flex-item:nth-child(2){
+    width: 90%; /* default is 0 
+}*/
