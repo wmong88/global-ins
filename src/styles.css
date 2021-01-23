@@ -1,4 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex-container-main{
+    display: flex;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+svg {
+    margin: auto;
+    display: block;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+    .flex-container{
+      display: block;
+    }
+}
