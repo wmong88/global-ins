@@ -17,6 +17,22 @@
     color: var(--font-dark-grey);
 }
 
+.legend{
+    padding: 6px;
+    display: inline-block;
+    margin: 4px 8px;
+    position: absolute;
+    border-radius: 6px;
+}
+
+.stroke{
+    background-color: #284566;
+}
+
+.stroke2{
+    background-color: #2eadbe;
+}
+
 .line-chart-wrapper .flex-item:nth-child(1){
     margin-right: 1em;
 }
