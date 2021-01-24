@@ -9,3 +9,25 @@
     text-align: center;
     color: var(--charcoal);
 }
+
+.chart-sub-title{
+    font-size: 85%;
+    font-weight: 500;
+    text-align: left;
+    color: var(--font-dark-grey);
+}
+
+.line-chart-wrapper .flex-item:nth-child(1){
+    margin-right: 1em;
+}
+
+.line-chart-wrapper .flex-item:nth-child(2){
+    margin-left: 1em;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+    .line-chart-wrapper .flex-item{
+        margin: 0 !important;
+    }
+}

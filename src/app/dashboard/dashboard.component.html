@@ -5,7 +5,8 @@
             <app-pie-chart [data]="dataSourceAsset"></app-pie-chart>
             <br>
             <div class="chart-title">Asset Allocation</div>
-            <app-table [dataSource]="dataSourceAsset" [displayedColumns]="displayedColumns"></app-table>
+            <br>
+            <app-table [dataSource]="dataSourceAsset" [displayedColumns]="displayedColumnsExposureData"></app-table>
         </mat-card>
     </div>
     <div class="flex-item">
@@ -13,7 +14,8 @@
             <app-pie-chart [data]="data2"></app-pie-chart>
             <br>
             <div class="chart-title">Liabilitties Allocation</div>
-            <app-table [dataSource]="data2" [displayedColumns]="displayedColumns"></app-table>
+            <br>
+            <app-table [dataSource]="data2" [displayedColumns]="displayedColumnsExposureData"></app-table>
         </mat-card>
     </div>
     <div class="flex-item">
@@ -21,12 +23,30 @@
             <app-pie-chart [data]="data2"></app-pie-chart>
             <br>
             <div class="chart-title">Liquidity Profile</div>
-            <app-table [dataSource]="data2" [displayedColumns]="displayedColumns"></app-table>
+            <br>
+            <app-table [dataSource]="data2" [displayedColumns]="displayedColumnsExposureData"></app-table>
         </mat-card>
     </div>
 </div>
 
-<div>
-    <app-multi-line-chart [lineData]="lineChart" [lineData2]="lineChart2"></app-multi-line-chart>
+<div class="line-chart-wrapper">
+    <mat-card>
+        <app-multi-line-chart [lineData]="lineChart" [lineData2]="lineChart2"></app-multi-line-chart>
+        <br>
+        <div class="chart-title">Projected return on assets in the event of an increase in interest rates(%)</div>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <br>
+                <div class="chart-sub-title">Simulated avg annual 10y French Govt bond yield</div>
+                <app-table [dataSource]="lineChart" [displayedColumns]="displayedColumnsProjectedData"></app-table>
+            </div>
+            <div class="flex-item">
+                <br>
+                <div class="chart-sub-title">Simulated return on assets</div>
+                <app-table [dataSource]="lineChart2" [displayedColumns]="displayedColumnsProjectedData"></app-table>
+            </div>
+        </div>
+    </mat-card>
 </div>
 
