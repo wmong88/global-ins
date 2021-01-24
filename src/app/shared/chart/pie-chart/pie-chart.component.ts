@@ -14,11 +14,11 @@ export class PieChartComponent implements OnInit {
   @Input() data:ExposureData[]
   
   private svg;
-  private margin = 50;
-  private width = 270;
-  private height = 270;
+  //private margin = 50;
+  private width = 200;
+  private height = 200;
   // The radius of the pie chart is half the smallest side
-  private radius = Math.min(this.width, this.height) / 2 - this.margin;
+  private radius = Math.min(this.width, this.height) / 2// - this.margin;
   private colors;
 
   constructor(private container: ElementRef){
