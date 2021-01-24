@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import * as d3 from 'd3';
+import { Component, OnInit, Input, ElementRef } from '@angular/core'
+import { ExposureData } from 'src/app/shared/models/exposureData.model'
+import * as d3 from 'd3'
 
 // Adopted from Basic pie chart example on D3 Graph Gallery:
 // https://www.d3-graph-gallery.com/graph/pie_basic.html
@@ -10,21 +11,23 @@ import * as d3 from 'd3';
 })
 
 export class PieChartComponent implements OnInit {
-  @Input() data:any[]
+  @Input() data:ExposureData[]
   
   private svg;
   private margin = 50;
-  private width = 250;
-  private height = 250;
+  private width = 270;
+  private height = 270;
   // The radius of the pie chart is half the smallest side
   private radius = Math.min(this.width, this.height) / 2 - this.margin;
   private colors;
 
   constructor(private container: ElementRef){
-
   }
   
   ngOnInit(): void {
+    console.log(this.data);
+    
+
     this.createSvg();
     this.createColors();
     this.drawChart();
@@ -76,7 +79,7 @@ export class PieChartComponent implements OnInit {
     .data(pie(this.data))
     .enter()
     .append('text')
-    .text(d => d.data.party)
+    .text(d => d.data.counterparty)
     .attr("transform", d => "translate(" + labelLocation.centroid(d) + ")")
     .style("text-anchor", "middle")
     .style("fill", "#fff")

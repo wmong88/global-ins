@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ExposureData } from 'src/app/shared/models/exposure.model'
+import { Component, OnInit } from '@angular/core'
+import { BaseResponse } from 'src/app/shared/models/baseResponse.model'
+import { ExposureData } from 'src/app/shared/models/exposureData.model'
 import { DashboardService } from 'src/app/shared/services/dashboard.service'
 
 // const EXPOSURE_DATA_ASSET: ExposureData[] = [
@@ -41,16 +42,16 @@ interface LineChart{
 
 export class DashboardComponent implements OnInit {
 
-  displayedColumns: string[] = ['party', 'rate']
+  displayedColumns: string[] = ['counterparty', 'rate']
   dataSourceAsset: ExposureData[]
   
 
 
   data2:any = [
-    {"party": "Bank", "rate": "17"},
-        {"party": "Insurers", "rate": "33"},
-        {"party": "Sovereigns", "rate": "21"},
-        {"party": "Others", "rate": "29"}
+    {"counterparty": "Bank", "rate": "18"},
+        {"counterparty": "Insurers", "rate": "33"},
+        {"counterparty": "Sovereigns", "rate": "21"},
+        {"counterparty": "Others", "rate": "29"}
   ]
 
 data3:any = [
@@ -388,24 +389,14 @@ data3:any = [
   }
 ]
 
-constructor() { }
+  constructor(private dashboardSvc: DashboardService) { }
 
   ngOnInit(): void {
 
-    
+    this.dashboardSvc.getExposureDataAsset().subscribe((data: BaseResponse)=>{
+      this.dataSourceAsset = data.response;
+    })  
 
   }
-
-
-  // constructor(private dashboardSvc: DashboardService) { }
-
-  // ngOnInit(): void {
-
-  //   this.dashboardSvc.getExposureDataAsset().subscribe((data: any[])=>{
-  //     console.log(data);
-  //     this.dataSourceAsset = data;
-  //   })  
-
-  // }
 
 }

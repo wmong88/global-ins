@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "response": [
+        {"counterparty": "Bank", "rate": "17"},
+        {"counterparty": "Insurers", "rate": "33"},
+        {"counterparty": "Sovereigns", "rate": "21"},
+        {"counterparty": "Others", "rate": "29"}
+    ]
+} 
+
