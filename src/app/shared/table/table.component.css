@@ -1,0 +1,17 @@
+.mat-table {
+    background: var(--white);
+    width: 100%;
+    box-shadow: none;
+}
+
+.mat-header-cell{
+    color: var(--font-light-grey);
+}
+
+.mat-cell{
+    color: var(--font-dark-grey);
+}
+
+th, td{
+    border-color: var(--border-grey);
+}

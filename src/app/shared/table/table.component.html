@@ -1,0 +1,16 @@
+<table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="party">
+    <th mat-header-cell *matHeaderCellDef> Party </th>
+    <td mat-cell *matCellDef="let element"> {{element.party}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rate">
+    <th mat-header-cell *matHeaderCellDef> Rate </th>
+    <td mat-cell *matCellDef="let element"> {{element.rate}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
