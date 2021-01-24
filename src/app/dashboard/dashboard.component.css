@@ -1,33 +1,11 @@
-.pie-chart-wrapper{
+.mat-card{
+    color: var(--font-dark-grey);
+    background: var(--white);
     margin: 1em;
-    border-radius: 5px;
-    /* border: 1px solid #efefef; */
-
-    box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
 }
 
-.flex-item:nth-child(1) > .pie-chart-wrapper{
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+65,2fb7ed+100&0+0,0.15+100 */
-    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 65%, rgba(47,183,237,0.15) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(47,183,237,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(47,183,237,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#472fb7ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.flex-item:nth-child(2) > .pie-chart-wrapper{
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+65,2fb7ed+100&0+0,0.15+100 */
-    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 65%, rgba(252, 248, 13, 0.15) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(252, 248, 13, 0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(252, 248, 13, 0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#472fb7ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.flex-item:nth-child(3) > .pie-chart-wrapper{
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+65,2fb7ed+100&0+0,0.15+100 */
-    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 65%, rgba(250, 29, 66, 0.15) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(250, 29, 66, 0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 65%,rgba(250, 29, 66, 0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#472fb7ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+.chart-title{
+    font-weight: 500;
+    text-align: center;
+    color: var(--charcoal);
 }

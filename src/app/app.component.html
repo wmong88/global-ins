@@ -1,3 +1,19 @@
-<!-- Header here -->
+<app-header></app-header>
 
-<router-outlet></router-outlet>
+<mat-drawer-container autosize>
+    <mat-drawer mode="side" [opened]=drawerStatus>
+        <div class="menu">
+            <div class="menu-list selected"><span class="material-icons">dashboard</span><span class="desc">Dashboard</span></div>
+            <div class="menu-list"><span class="material-icons">multiline_chart</span><span class="desc">Analysis</span></div>
+            <div class="menu-list"><span class="material-icons">bookmark_border</span><span class="desc">Saved</span></div>
+            <div class="menu-list"><span class="material-icons">campaign</span><span class="desc">Announcement</span></div>
+            
+            <div class="menu-list"><span class="material-icons">settings</span><span class="desc">Settings</span></div>
+            <div class="menu-list"><span class="material-icons">login</span><span class="desc">Logout</span></div>
+        </div>
+    </mat-drawer>
+
+    <div class="main-container">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

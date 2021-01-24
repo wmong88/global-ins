@@ -1,0 +1,14 @@
+.logo{
+    margin: auto;
+    font-weight: bold;
+}
+
+.mat-toolbar{
+    color: var(--font-dark-grey);
+    background: var(--white);
+    border-bottom: 1px solid var(--border-grey);
+}
+
+.pointer {
+    cursor: pointer;
+}

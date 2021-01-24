@@ -1,4 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { ExposureData } from 'src/app/shared/models/exposure.model'
+import { DashboardService } from 'src/app/shared/services/dashboard.service'
+
+// const EXPOSURE_DATA_ASSET: ExposureData[] = [
+//   {"party": "Bank", "rate": "17"},
+//   {"party": "Insurers", "rate": "33"},
+//   {"party": "Sovereigns", "rate": "21"},
+//   {"party": "Others", "rate": "29"}
+// ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 interface LineChart{
   date: string,
@@ -16,28 +41,23 @@ interface LineChart{
 
 export class DashboardComponent implements OnInit {
 
-  data:any = [
-      {"Framework": "Vue1", "Stars": "166443", "Released": "2014"},
-      {"Framework": "React1", "Stars": "150793", "Released": "2013"},
-      {"Framework": "Angular1", "Stars": "62342", "Released": "2016"},
-      {"Framework": "Backbone1", "Stars": "27647", "Released": "2010"},
-      {"Framework": "Ember1", "Stars": "21471", "Released": "2011"}
-    ]
+  displayedColumns: string[] = ['party', 'rate']
+  dataSourceAsset: ExposureData[]
+  
+
 
   data2:any = [
-    {"Framework": "Vue2", "Stars": "166443", "Released": "2014"},
-    {"Framework": "React2", "Stars": "150793", "Released": "2013"},
-    {"Framework": "Angular2", "Stars": "62342", "Released": "2016"},
-    {"Framework": "Backbone2", "Stars": "27647", "Released": "2010"},
-    {"Framework": "Ember2", "Stars": "21471", "Released": "2011"},
+    {"party": "Bank", "rate": "17"},
+        {"party": "Insurers", "rate": "33"},
+        {"party": "Sovereigns", "rate": "21"},
+        {"party": "Others", "rate": "29"}
   ]
 
 data3:any = [
-    {"Framework": "Vue3", "Stars": "166443", "Released": "2014"},
-    {"Framework": "React3", "Stars": "150793", "Released": "2013"},
-    {"Framework": "Angular3", "Stars": "62342", "Released": "2016"},
-    {"Framework": "Backbone3", "Stars": "27647", "Released": "2010"},
-    {"Framework": "Ember3", "Stars": "21471", "Released": "2011"},
+  {"party": "Bank", "rate": "17"},
+  {"party": "Insurers", "rate": "33"},
+  {"party": "Sovereigns", "rate": "21"},
+  {"party": "Others", "rate": "29"}
   ]
 
   // data4:any=[
@@ -368,9 +388,24 @@ data3:any = [
   }
 ]
 
-  constructor() { }
+constructor() { }
 
   ngOnInit(): void {
+
+    
+
   }
+
+
+  // constructor(private dashboardSvc: DashboardService) { }
+
+  // ngOnInit(): void {
+
+  //   this.dashboardSvc.getExposureDataAsset().subscribe((data: any[])=>{
+  //     console.log(data);
+  //     this.dataSourceAsset = data;
+  //   })  
+
+  // }
 
 }
