@@ -14,8 +14,8 @@ export class PieChartComponent implements OnInit {
   
   private svg;
   private margin = 50;
-  private width = 200;
-  private height = 200;
+  private width = 250;
+  private height = 250;
   // The radius of the pie chart is half the smallest side
   private radius = Math.min(this.width, this.height) / 2 - this.margin;
   private colors;
@@ -31,7 +31,6 @@ export class PieChartComponent implements OnInit {
   }
 
   private createSvg(): void {
-    
     this.svg = d3.select(this.container.nativeElement)
     .append("svg")
     .attr("width", this.width)
@@ -45,13 +44,13 @@ export class PieChartComponent implements OnInit {
 
   private createColors(): void {
     this.colors = d3.scaleOrdinal()
-    .domain(this.data.map(d => d.Stars.toString()))
-    .range(["#cabc12", "#a5b8db", "#879cc4", "#677795", "#5a6782"]);
+    .domain(this.data.map(d => d.rate.toString()))
+    .range(["#284566", "#2eadbe", "#ef4d61", "#fbb218"]);
   }
 
   private drawChart(): void {
     // Compute the position of each group on the pie:
-    const pie = d3.pie<any>().value((d: any) => Number(d.Stars));
+    const pie = d3.pie<any>().value((d: any) => Number(d.rate));
 
     // Build the pie chart
     this.svg
@@ -64,12 +63,12 @@ export class PieChartComponent implements OnInit {
       .outerRadius(this.radius)
     )
     .attr('fill', (d, i) => (this.colors(i)))
-    .attr("stroke", "#121926")
+    .attr("stroke", "#efefef")
     .style("stroke-width", "1px");
 
     // Add labels
     const labelLocation = d3.arc()
-    .innerRadius(100)
+    .innerRadius(10)
     .outerRadius(this.radius);
 
     this.svg
@@ -77,10 +76,11 @@ export class PieChartComponent implements OnInit {
     .data(pie(this.data))
     .enter()
     .append('text')
-    .text(d => d.data.Framework)
+    .text(d => d.data.party)
     .attr("transform", d => "translate(" + labelLocation.centroid(d) + ")")
     .style("text-anchor", "middle")
-    .style("font-size", 15);
+    .style("fill", "#fff")
+    .style("font-size", 12);
   }
 
 }

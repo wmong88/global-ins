@@ -81,12 +81,14 @@ export class MultiLineChartComponent implements OnInit {
 	}
 
 	private drawAxis(){
-		this.x0Axis = this.chart.append('g')
+    this.x0Axis = this.chart.append('g')
+      .attr("color", "pink")
 			.classed('x-axis', true)
 			.attr("transform", "translate(0," + this.height + ")")
 			.call(d3.axisBottom(this.x0))
 
     this.y0Axis = this.chart.append('g')
+      .attr("color", "pink")
 			.classed('y0-axis', true)
 			.call(d3.axisLeft(this.y0));  
 
