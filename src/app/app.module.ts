@@ -8,14 +8,16 @@ import { MatCardModule } from '@angular/material/card'
 import { MatTableModule } from '@angular/material/table'
 import { HttpClientModule } from '@angular/common/http'
 
+import { mockApiServiceProvider } from './shared/services/mock-api.service'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { PieChartComponent } from './shared/chart/pie-chart/pie-chart.component'
 import { MultiLineChartComponent } from './shared/chart/multi-line-chart/multi-line-chart.component'
-import { HeaderComponent } from './shared/header/header.component'
-import { TableComponent } from './shared/table/table.component'
+import { HeaderComponent } from './shared/component/header/header.component'
+import { TableComponent } from './shared/component/table/table.component'
+import { environment } from 'src/environments/environment'
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TableComponent } from './shared/table/table.component'
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    environment.isLocal ? mockApiServiceProvider : []
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
