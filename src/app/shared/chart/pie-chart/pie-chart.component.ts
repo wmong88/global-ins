@@ -25,9 +25,6 @@ export class PieChartComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    console.log(this.data);
-    
-
     this.createSvg();
     this.createColors();
     this.drawChart();

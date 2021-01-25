@@ -75,6 +75,7 @@ export class MultiLineChartComponent implements OnInit {
       .classed('line', true);  
 	}
 
+  //create axis
 	private drawAxis(){
     this.x0Axis = this.chart.append('g')
       .attr("color", "#b2b2b2")
@@ -88,9 +89,9 @@ export class MultiLineChartComponent implements OnInit {
       .style("font", "12px roboto")
 			.classed('y0-axis', true)
 			.call(d3.axisLeft(this.y0));  
-
 	}
 
+  //plot the lines
   private drawLine(linedata:any, strokeNumber:string){
     var that = this;
     var stroke = '#000';
@@ -113,6 +114,7 @@ export class MultiLineChartComponent implements OnInit {
 
     this.y0.domain([0,4.0])
 
+    //determine stroke colors
     stroke = (strokeNumber == 'stroke') ? this.colors[0] : this.colors[1]
 
     this.lineArea.append("path")
@@ -124,7 +126,6 @@ export class MultiLineChartComponent implements OnInit {
     .attr("stroke-width", "1")
     .transition()
     .duration(1000)
-      
   }    
 
 }
